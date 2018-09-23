@@ -1,6 +1,6 @@
 package com.nissan.training.corejava.assignment_ATM;
 
-abstract public class Account {
+ public class Account {
 	private int number;
 	protected int balance;
 	
