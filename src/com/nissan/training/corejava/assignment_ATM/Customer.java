@@ -10,6 +10,18 @@ public class Customer {
 	private Account acc1;
 	private Account acc2;
 	
+	Customer(final String name, final String address, 
+			final Calendar dob, final String cardNumber, 
+			final int pin,final Account a1, final Account a2){
+			
+		this.name = name;
+		this.address = address;
+		this.dob = dob;
+		this.cardNumber = cardNumber;
+		this.pin = pin;
+		
+	}
+	
 	public boolean verifyPassword(final int passwd) {
 		try {
 			if(passwd != pin)
