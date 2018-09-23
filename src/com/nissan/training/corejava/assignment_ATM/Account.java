@@ -3,12 +3,7 @@ package com.nissan.training.corejava.assignment_ATM;
  public class Account {
 	private int number;
 	protected int balance;
-	
-	
-	
-	
-	
-	
+
 	public int getNumber() {
 		return number;
 	}
@@ -18,11 +13,9 @@ package com.nissan.training.corejava.assignment_ATM;
 		this.number = number;
 	}
 
-
 	public int getBalance() {
 		return balance;
 	}
-
 
 	public void setBalance(int balance) {
 		this.balance = balance;
@@ -68,7 +61,5 @@ package com.nissan.training.corejava.assignment_ATM;
 			withdraw(amount);
 		}
 	}
-	
-	
 	
 }

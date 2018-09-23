@@ -7,18 +7,18 @@ public class Customer {
 	private Calendar dob;
 	private String cardNumber;
 	private int pin;
-	private Account acc;
+	private Account account;
 	
 	Customer(final String name, final String address, 
 			final Calendar dob, final String cardNumber, 
-			final int pin,final Account acc){
+			final int pin,final Account account){
 			
 		this.name = name;
 		this.address = address;
 		this.dob = dob;
 		this.cardNumber = cardNumber;
 		this.pin = pin;
-		this.acc = acc;
+		this.account = account;
 	}
 	
 	public void verifyPassword(final int passwd) throws PasswordNotMatchException{
@@ -62,4 +62,7 @@ public class Customer {
 		this.pin = pin;
 	}
 	
+	public Account getAccount() {
+		return this.account;
+	}
 }
