@@ -6,6 +6,15 @@ public class ATM {
 	private Bank managedBy;
 	Customer customer;
 	
+	
+	
+	public ATM(String location, Bank managedBy) {
+		super();
+		this.location = location;
+		this.managedBy = managedBy;
+		this.customer = null;
+	}
+
 	public void identify(String cardNumber, int pin) throws NullPointerException, PasswordNotMatchException
 	{
 		try
