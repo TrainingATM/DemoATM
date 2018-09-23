@@ -7,6 +7,8 @@ public class Customer {
 	private Calendar dob;
 	private String cardNumber;
 	private int pin;
+	private Account acc1;
+	private Account acc2;
 	
 	public boolean verifyPassword(final int passwd) {
 		try {
