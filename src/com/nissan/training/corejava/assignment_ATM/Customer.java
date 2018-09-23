@@ -27,7 +27,7 @@ public class Customer {
 				throw new PasswordNotMatchException("Password do not match");
 		}
 		catch(PasswordNotMatchException p) {
-			return PasswordNotMatchException;
+			return p;
 		}
 		return null;
 	}
