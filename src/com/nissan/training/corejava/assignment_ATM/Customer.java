@@ -7,19 +7,18 @@ public class Customer {
 	private Calendar dob;
 	private String cardNumber;
 	private int pin;
-	private Account acc1;
-	private Account acc2;
+	private Account acc;
 	
 	Customer(final String name, final String address, 
 			final Calendar dob, final String cardNumber, 
-			final int pin,final Account a1, final Account a2){
+			final int pin,final Account acc){
 			
 		this.name = name;
 		this.address = address;
 		this.dob = dob;
 		this.cardNumber = cardNumber;
 		this.pin = pin;
-		
+		this.acc = acc;
 	}
 	
 	public boolean verifyPassword(final int passwd) {
