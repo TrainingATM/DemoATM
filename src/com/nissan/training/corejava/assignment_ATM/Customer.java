@@ -62,4 +62,7 @@ public class Customer {
 		this.pin = pin;
 	}
 	
+	public Account getAccount() {
+		return this.acc;
+	}
 }
