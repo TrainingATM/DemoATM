@@ -9,15 +9,13 @@ public class CurrentAccount extends Account{
 	
 	
 	@Override
-	public void withdraw(int amount) {
+	public void withdraw(int amount) throws InsufficientBalanceException {
 		
 		if(balance-2000<amount)
 		{
-			try {
-				throw new InsufficientBalanceException("Minimum Balance 2000");
-			}catch(InsufficientBalanceException msg) {
-				System.out.println(msg);
-			}
+		
+			throw new InsufficientBalanceException(" ");
+			
 		}
 		else {
 			this.balance-=amount;

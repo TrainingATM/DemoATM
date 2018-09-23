@@ -58,7 +58,7 @@ package com.nissan.training.corejava.assignment_ATM;
 	
 	}
 	
-	public void CreateTransaction(boolean isDeposit,int amount)throws InsufficientBalanceException {
+	public void createTransaction(boolean isDeposit,int amount)throws InsufficientBalanceException {
 		
 		ATMTransactions oneTransaction = new ATMTransactions();
 		
