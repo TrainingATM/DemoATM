@@ -8,7 +8,14 @@ public class Customer {
 	private String cardNumber;
 	private int pin;
 	
-	boolean verifyPassword(final String passwd) {
-		
+	boolean verifyPassword(final int passwd) {
+		try {
+			if(passwd != pin)
+				throw new PasswordNotMatchException("Password do not match");
+		}
+		catch(PasswordNotMatchException p) {
+			return false;
+		}
+		return true;
 	}
 }

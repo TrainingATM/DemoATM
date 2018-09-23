@@ -1,6 +1,6 @@
 package com.nissan.training.corejava.assignment_ATM;
 
-public class PasswordNotMatchException {
+public class PasswordNotMatchException extends Exception{
 	
 	String message;
 	
