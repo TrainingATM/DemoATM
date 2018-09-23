@@ -1,8 +1,8 @@
 package com.nissan.training.corejava.assignment_ATM;
 
-public class Account {
+abstract public class Account {
 	private int number;
-	private int balance;
+	protected int balance;
 	
 	
 	
@@ -59,5 +59,7 @@ public class Account {
 	public void CreateTransaction() {
 		
 	}
+	
+	
 	
 }
