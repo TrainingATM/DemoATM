@@ -29,7 +29,7 @@ public class ATM {
 		account.createTransaction(isDeposit, amount);
 		
 	}
-	
+
 	Customer getCustomer(String cardNumber)
 	{
 		for(Customer customer : managedBy.customerList)
