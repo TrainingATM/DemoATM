@@ -21,15 +21,9 @@ public class Customer {
 		this.acc = acc;
 	}
 	
-	public PasswordNotMatchException verifyPassword(final int passwd) {
-		try {
+	public void verifyPassword(final int passwd) throws PasswordNotMatchException{
 			if(passwd != pin)
 				throw new PasswordNotMatchException("Password do not match");
-		}
-		catch(PasswordNotMatchException p) {
-			return p;
-		}
-		return null;
 	}
 
 	public String getName() {
