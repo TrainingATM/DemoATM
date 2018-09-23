@@ -2,6 +2,7 @@ package com.nissan.training.corejava.assignment_ATM;
 
 public class ATM {
 	
+	@SuppressWarnings("unused")
 	private String location;
 	private Bank managedBy;
 	
@@ -22,10 +23,10 @@ public class ATM {
 		}
 	}
 	
-	public ATMTransactions[] transactions()
-	{
-		
-	}
+//	public ATMTransactions[] transactions()
+//	{
+//		
+//	}
 	
 	Customer getCustomer(String cardNumber)
 	{

@@ -40,15 +40,15 @@ package com.nissan.training.corejava.assignment_ATM;
 	// This function takes amount to be withdrawn as parameter checks the balance
 	// and decrements the balance.
 	
-	public void withdraw(int amount) {
+	public void withdraw(int amount)throws InsufficientBalanceException {
 		
 			if(balance<amount)
 			{
-				try {
+//				try {
 					throw new InsufficientBalanceException("Insufficient Balance");
-				}catch(InsufficientBalanceException msg) {
-					System.out.println(msg);
-				}
+//				}catch(InsufficientBalanceException msg) {
+//					System.out.println(msg);
+//				}
 			}
 			else {
 				this.balance-=amount;
@@ -56,8 +56,17 @@ package com.nissan.training.corejava.assignment_ATM;
 	
 	}
 	
-	public void CreateTransaction() {
+	public void CreateTransaction(boolean isDeposit,int amount)throws InsufficientBalanceException {
 		
+		ATMTransactions oneTransaction = new ATMTransactions();
+		
+		if(isDeposit) {
+			
+			deposit(amount);
+		}
+		else {
+			withdraw(amount);
+		}
 	}
 	
 	
