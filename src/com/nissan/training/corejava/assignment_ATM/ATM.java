@@ -4,12 +4,13 @@ public class ATM {
 	
 	private String location;
 	private Bank managedBy;
+	Customer customer;
 	
 	public void identify(String cardNumber, int pin) throws NullPointerException, PasswordNotMatchException
 	{
 		try
 		{
-			Customer customer = getCustomer(cardNumber);
+			customer = getCustomer(cardNumber);
 			customer.verifyPassword(pin);
 		}
 		catch(NullPointerException e)
@@ -22,8 +23,10 @@ public class ATM {
 		}
 	}
 	
-	public ATMTransactions[] transactions()
+	public void transactions(boolean isDeposit ,int amount) throws InsufficientBalanceException
 	{
+		Account account = customer.getAccount();
+		account.createTransaction(isDeposit, amount);
 		
 	}
 	
