@@ -1,6 +1,11 @@
 package com.nissan.training.corejava.assignment_ATM;
 import java.util.Calendar;
 
+/**
+ * @author Mohit Anand
+ * Customer class having information about customer
+ * and associated Account
+ */
 public class Customer {
 	private String name;
 	private String address;
