@@ -5,7 +5,7 @@ public class ATM {
 	private String location;
 	private Bank managedBy;
 	
-	public boolean identify(String cardNumber, int pin) throws NullPointerException, PasswordNotMatchException
+	public void identify(String cardNumber, int pin) throws NullPointerException, PasswordNotMatchException
 	{
 		try
 		{
@@ -14,7 +14,7 @@ public class ATM {
 		}
 		catch(NullPointerException e)
 		{
-			throw new Exception("No customer found with the current card number");
+			throw new NullPointerException("No customer found with the current card number");
 		}
 		catch(PasswordNotMatchException e)
 		{
