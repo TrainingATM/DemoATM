@@ -8,7 +8,7 @@ public class Customer {
 	private String cardNumber;
 	private int pin;
 	
-	boolean verifyPassword(final int passwd) {
+	public boolean verifyPassword(final int passwd) {
 		try {
 			if(passwd != pin)
 				throw new PasswordNotMatchException("Password do not match");
@@ -18,4 +18,41 @@ public class Customer {
 		}
 		return true;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Calendar getDob() {
+		return dob;
+	}
+
+	public void setDob(Calendar dob) {
+		this.dob = dob;
+	}
+
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public void setPin(int pin) {
+		this.pin = pin;
+	}
+	
 }
