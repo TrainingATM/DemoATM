@@ -3,6 +3,15 @@ package com.nissan.training.corejava.assignment_ATM;
  public class Account {
 	private int number;
 	protected int balance;
+	
+	
+
+	public Account(int number, int balance) {
+//		super();
+		this.number = number;
+		this.balance = balance;
+	}
+
 
 	public int getNumber() {
 		return number;

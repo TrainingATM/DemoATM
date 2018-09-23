@@ -9,13 +9,13 @@ import java.util.Calendar;
 public class Customer {
 	private String name;
 	private String address;
-	private Calendar dob;
+	private String dob;
 	private String cardNumber;
 	private int pin;
 	private Account account;
 	
-	Customer(final String name, final String address, 
-			final Calendar dob, final String cardNumber, 
+	public Customer(final String name, final String address, 
+			final String dob, final String cardNumber, 
 			final int pin,final Account account){
 			
 		this.name = name;
@@ -47,11 +47,11 @@ public class Customer {
 		this.address = address;
 	}
 
-	public Calendar getDob() {
+	public String getDob() {
 		return dob;
 	}
 
-	public void setDob(Calendar dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 

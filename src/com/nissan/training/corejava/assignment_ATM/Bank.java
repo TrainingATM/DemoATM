@@ -7,12 +7,16 @@ public class Bank {
 	//bank details
 	public String code;
 	public String address;
+	private String name;
 	
 	//Account and customer array list
 	public ArrayList<Account> accountList;
 	public ArrayList<Customer> customerList;
 	
-	public Bank() {
+	public Bank(String code, String address, String name) {
+		this.code = code;
+		this.address = address;
+		this.name = name;
 		accountList = new ArrayList<>();
 		customerList = new ArrayList<>();
 	}
