@@ -5,6 +5,7 @@ public class ATM {
 	private String location;
 	private Bank managedBy;
 	Customer customer;
+	Account account;
 	
 	
 	
@@ -34,10 +35,16 @@ public class ATM {
 	
 	public void transactions(boolean isDeposit ,int amount) throws InsufficientBalanceException
 	{
-		Account account = customer.getAccount();
+		account = customer.getAccount();
 		account.createTransaction(isDeposit, amount);
 		
 	}
+	
+	public int getAccountBalance()
+	{
+		return account.getBalance();
+	}
+	
 
 	Customer getCustomer(String cardNumber)
 	{
