@@ -2,7 +2,7 @@ package com.nissan.training.corejava.assignment_ATM;
 
 import java.util.ArrayList;
 
-public class Bank {
+public class Bank implements IBank{
 
 	//bank details
 	public String code;
@@ -29,22 +29,18 @@ public class Bank {
 		this.customerList.add(customer);
 	}
 	
-	public String getCode() {
-		return code;
-	}
-	
-	public void setCode(String code) {
-		this.code = code;
-	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
+	@Override
 	public void manages() {}
+	
+	@Override
 	public void maintains() {}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
