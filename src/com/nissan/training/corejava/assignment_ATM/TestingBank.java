@@ -1,4 +1,5 @@
 package com.nissan.training.corejava.assignment_ATM;
+
 import java.util.Scanner;
 
 /** 
@@ -11,10 +12,10 @@ public class TestingBank {
 		//		Created Bank object
 		Bank bank = new Bank("SBIN1010", "Trivandram", "SBI");
 
-		//		Created account object
-		Account account1 = new CurrentAccount(1823123, 1000000);
+		//	Created account object
+		Account account1 = new CurrentAccount(1823123, 10000);
 
-		//		Created customer object
+		//	Created customer object
 		Customer customer1 = new Customer("Mohit", "Patna", "2018-6-28","1234567890123456",
 				1234, account1);
 		
@@ -36,7 +37,10 @@ public class TestingBank {
 		
 		ATM atm = new ATM("Technopark", bank);
 		
+		
+		
 		try {
+			
 			Scanner in  = new Scanner(System.in);
 			System.out.println("Welcome to SBI bank Trivandrum");
 			System.out.println("Please enter 16 digit card number");
@@ -53,6 +57,7 @@ public class TestingBank {
 			System.out.println("Thank you for using SBI ATM");
 			int balance = atm.getAccountBalance();
 			System.out.println("Your current balance is: " + balance);
+			
 		} catch (CustomerNotFoundException e) {
 			System.out.println("No account found with given card number");
 		} catch (PasswordNotMatchException e) {
@@ -64,4 +69,5 @@ public class TestingBank {
 		}
 		
 	}
+	
 }
