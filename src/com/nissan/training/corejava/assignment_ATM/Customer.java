@@ -2,10 +2,11 @@ package com.nissan.training.corejava.assignment_ATM;
 import java.util.Calendar;
 
 /**
- * @author Mohit Anand
+ * @author NDH00159
  * Customer class having information about customer
  * and associated Account
  */
+
 public class Customer {
 	private String name;
 	private String address;
@@ -26,6 +27,11 @@ public class Customer {
 		this.account = account;
 	}
 	
+	/**
+	 * 
+	 * @param passwd
+	 * @throws PasswordNotMatchException
+	 */
 	public void verifyPassword(final int passwd) throws PasswordNotMatchException{
 			if(passwd != pin)
 				throw new PasswordNotMatchException("Password do not match");

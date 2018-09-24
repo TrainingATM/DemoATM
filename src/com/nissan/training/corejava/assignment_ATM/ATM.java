@@ -1,12 +1,18 @@
 package com.nissan.training.corejava.assignment_ATM;
 
+@SuppressWarnings("unused")
 public class ATM {
 	
 	private String location;
 	private Bank managedBy;
 	Customer customer;
+	Account account;
 	
-	
+	/**
+	 * @author NDH00159
+	 * @param location
+	 * @param managedBy
+	 */
 	
 	public ATM(String location, Bank managedBy) {
 		super();
@@ -15,16 +21,23 @@ public class ATM {
 		this.customer = null;
 	}
 
-	public void identify(String cardNumber, int pin) throws NullPointerException, PasswordNotMatchException
+	/**
+	 * 
+	 * @param cardNumber
+	 * @param pin
+	 * @throws NullPointerException
+	 * @throws PasswordNotMatchException
+	 */
+	public void identify(String cardNumber, int pin) throws CustomerNotFoundException, PasswordNotMatchException
 	{
 		try
 		{
 			customer = getCustomer(cardNumber);
 			customer.verifyPassword(pin);
 		}
-		catch(NullPointerException e)
+		catch(CustomerNotFoundException e)
 		{
-			throw new NullPointerException("No customer found with the current card number");
+			throw new CustomerNotFoundException(e.getMessage());
 		}
 		catch(PasswordNotMatchException e)
 		{
@@ -32,21 +45,40 @@ public class ATM {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param isDeposit
+	 * @param amount
+	 * @throws InsufficientBalanceException
+	 */
 	public void transactions(boolean isDeposit ,int amount) throws InsufficientBalanceException
 	{
-		Account account = customer.getAccount();
+		account = customer.getAccount();
 		account.createTransaction(isDeposit, amount);
 		
 	}
 
-	Customer getCustomer(String cardNumber)
+	/**
+	 * 
+	 * @param cardNumber
+	 * @return Customer
+	 */
+	Customer getCustomer(String cardNumber) throws CustomerNotFoundException
 	{
 		for(Customer customer : managedBy.customerList)
 		{
 			if(customer.getCardNumber().equals(cardNumber))
 				return customer;
 		}
-		return null;
+		throw new CustomerNotFoundException("Customer Not found"); 
+	}
+	/**
+	 * 
+	 * @return the current balance of account 
+	 */
+	public int getAccountBalance()
+	{
+		return account.getBalance();
 	}
 
 }

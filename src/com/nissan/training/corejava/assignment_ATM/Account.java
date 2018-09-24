@@ -4,8 +4,12 @@ package com.nissan.training.corejava.assignment_ATM;
 	private int number;
 	protected int balance;
 	
-	
 
+	/**
+	 * 
+	 * @param number
+	 * @param balance
+	 */
 	public Account(int number, int balance) {
 //		super();
 		this.number = number;
@@ -33,6 +37,11 @@ package com.nissan.training.corejava.assignment_ATM;
 
 	// This function takes amount to be deposited in the account as parameter
 	// and increments the balance.
+	
+	/**
+	 * 
+	 * @param amount
+	 */
 	public void deposit(int amount) { 
 		
 		this.balance+=amount;
@@ -42,6 +51,11 @@ package com.nissan.training.corejava.assignment_ATM;
 	// This function takes amount to be withdrawn as parameter checks the balance
 	// and decrements the balance.
 	
+	/**
+	 * 
+	 * @param amount
+	 * @throws InsufficientBalanceException
+	 */
 	public void withdraw(int amount)throws InsufficientBalanceException {
 		
 			if(balance<amount)
@@ -58,6 +72,12 @@ package com.nissan.training.corejava.assignment_ATM;
 	
 	}
 	
+	/**
+	 * 
+	 * @param isDeposit
+	 * @param amount
+	 * @throws InsufficientBalanceException
+	 */
 	public void createTransaction(boolean isDeposit,int amount)throws InsufficientBalanceException {
 		
 		ATMTransactions oneTransaction = new ATMTransactions();
